@@ -16,13 +16,13 @@ namespace SeleniumProj
         [TestInitialize]
         public void TestSetup()
         {
-            //driver = new ChromeDriver();
-            //driver.Navigate().GoToUrl(url);
+            driver = new ChromeDriver();
+            driver.Navigate().GoToUrl(url);
         }
         [TestCleanup]
         public void Cleanup()
         {
-            //driver.Quit();
+            driver.Quit();
         }
 
        
