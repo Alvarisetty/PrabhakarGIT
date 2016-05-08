@@ -5,6 +5,7 @@ using OpenQA.Selenium.Chrome; //to use googlechrome browser.
 using OpenQA.Selenium.Support;
 using OpenQA.Selenium.Support.UI;
 using System.Collections.Generic;
+using System.IO;
 
 namespace SeleniumProj
 {
@@ -16,8 +17,8 @@ namespace SeleniumProj
         [TestInitialize]
         public void TestSetup()
         {
-            string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
-            driver = new ChromeDriver(startupPath);
+            string wanted_path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+            driver = new ChromeDriver(wanted_path);
             driver.Navigate().GoToUrl(url);
         }
         [TestCleanup]
