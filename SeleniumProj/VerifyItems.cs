@@ -18,7 +18,8 @@ namespace SeleniumProj
         public void TestSetup()
         {
             string wanted_path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-            driver = new ChromeDriver(wanted_path);
+            string fullPath = Path.Combine(wanted_path, @"SeleniumProj\Drivers");
+            driver = new ChromeDriver(fullPath);
             driver.Navigate().GoToUrl(url);
         }
         [TestCleanup]
