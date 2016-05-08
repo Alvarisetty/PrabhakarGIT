@@ -16,7 +16,7 @@ namespace SeleniumProj
         [TestInitialize]
         public void TestSetup()
         {
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(@"E:\Prabhkar\SeleniumProj\SeleniumProj\Drivers\chromedriver.exe");
             driver.Navigate().GoToUrl(url);
         }
         [TestCleanup]
